@@ -1,12 +1,19 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import InputGroup from '../components/molecules/InputGroup';
 import logo from '../assets/images/logo.png';
 import bg from '../assets/images/login-bg.jpg';
 
 const Login = () => {
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    navigate('/');
+  };
+
   return (
-    <div 
-      className="d-flex align-items-center justify-content-center" 
+    <div
+      className="d-flex align-items-center justify-content-center"
       style={{
         width: '100vw',
         height: '100vh',
@@ -17,7 +24,7 @@ const Login = () => {
         position: 'fixed'
       }}
     >
-      <div 
+      <div
         style={{
           width: '90%',
           maxWidth: '380px',
@@ -34,14 +41,14 @@ const Login = () => {
           <p style={{ fontSize: '12px', color: '#888' }}>Selamat datang kembali!</p>
         </div>
 
-        <form>
+        <form onSubmit={handleLogin}>
           <div style={{ marginBottom: '14px' }}>
             <InputGroup label="Username" type="text" placeholder="Masukkan username" id="username" />
           </div>
           <div style={{ marginBottom: '6px' }}>
             <InputGroup label="Kata Sandi" type="password" placeholder="Masukkan kata sandi" id="password" />
           </div>
-          
+
           <div className="d-flex justify-content-between" style={{ fontSize: '11px', marginBottom: '18px' }}>
             <span>
               Belum punya akun? <Link to="/register" className="text-white fw-bold text-decoration-none ms-1">Daftar</Link>
@@ -49,13 +56,14 @@ const Login = () => {
             <Link to="#" style={{ color: '#888', textDecoration: 'none' }}>Lupa kata sandi?</Link>
           </div>
 
-          <button 
+          <button
+            type="submit"
             className="btn w-100 fw-bold shadow-none"
-            style={{ 
-              borderRadius: '25px', 
-              backgroundColor: '#2F3334', 
-              color: 'white', 
-              border: 'none', 
+            style={{
+              borderRadius: '25px',
+              backgroundColor: '#2F3334',
+              color: 'white',
+              border: 'none',
               fontSize: '14px',
               height: '40px',
               marginBottom: '10px'
@@ -66,19 +74,20 @@ const Login = () => {
 
           <div style={{ fontSize: '11px', color: '#888', marginBottom: '10px' }}>Atau</div>
 
-          <button 
+          <button
+            type="button"
             className="btn btn-outline-light w-100 d-flex align-items-center justify-content-center shadow-none"
-            style={{ 
-              borderRadius: '25px', 
-              fontSize: '13px', 
+            style={{
+              borderRadius: '25px',
+              fontSize: '13px',
               height: '40px',
-              borderColor: '#444' 
+              borderColor: '#444'
             }}
           >
-            <img 
-              src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" 
-              alt="G" 
-              style={{ width: '16px', marginRight: '10px' }} 
+            <img
+              src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+              alt="G"
+              style={{ width: '16px', marginRight: '10px' }}
             />
             Masuk dengan Google
           </button>
