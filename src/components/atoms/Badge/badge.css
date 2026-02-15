@@ -1,0 +1,32 @@
+.badge-atom {
+    padding: 2px 8px;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 4px;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.badge-outline {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    color: white;
+}
+
+.badge-solid {
+    background-color: #E50914;
+    color: white;
+}
+
+.badge-new {
+    background-color: #0B31B1;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.badge-top5 {
+    background-color: #B91C1C;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 0 0 0 8px;
+}

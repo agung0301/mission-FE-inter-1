@@ -1,0 +1,190 @@
+.top-rating-card {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    min-width: 220px;
+    height: 250px;
+    cursor: pointer;
+    overflow: visible;
+}
+
+.top-rating-card:hover .rank-number {
+    -webkit-text-stroke: 2px #2F61D5;
+    transition: -webkit-text-stroke 0s;
+}
+
+.portrait-poster {
+    position: absolute;
+    bottom: 0;
+    left: 48px;
+    width: 170px;
+    height: 250px;
+    border-radius: 14px;
+    background-color: #181A1C;
+    z-index: 1;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+    transition-delay: 0s;
+    transform-origin: center center;
+}
+
+.top-rating-card:hover .portrait-poster {
+    transition-delay: 1s;
+    width: 320px;
+    height: 380px;
+    z-index: 1000;
+    transform: translate(-75px, 100px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
+}
+
+.img-portrait {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 1;
+    transition: opacity 0.2s;
+}
+
+.top-rating-card:hover .img-portrait {
+    opacity: 0;
+    transition-delay: 1s;
+}
+
+.img-landscape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s;
+}
+
+.top-rating-card:hover .img-landscape {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 1s;
+}
+
+.top-rating-details {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    background-color: #181A1C;
+    gap: 12px;
+    position: absolute;
+    top: 180px;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s;
+    color: white;
+}
+
+.top-rating-card:hover .top-rating-details {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 1s;
+    z-index: 101;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    filter: brightness(0) invert(1);
+}
+
+.left-btns {
+    display: flex;
+    gap: 10px;
+}
+
+.play-btn,
+.check-btn,
+.expand-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+}
+
+.play-btn {
+    background: white;
+    color: black;
+    border: none;
+}
+
+.meta-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.age-badge {
+    background: #333;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+}
+
+.duration-text {
+    font-size: 12px;
+    color: #ccc;
+}
+
+.genre-list {
+    display: flex;
+    gap: 5px;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.genre-item:not(:last-child)::after {
+    content: "•";
+    margin-left: 5px;
+}
+
+
+@media (max-width: 768px) {
+    .top-rating-card:active .portrait-poster,
+    .top-rating-card:hover .portrait-poster {
+        transform: translateY(-15px) scale(1.05) !important;
+        transition: transform 0.2s ease !important;
+        z-index: 10 !important;
+        width: 170px !important;
+        height: 250px !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6) !important;
+    }
+
+    .top-rating-card:hover .img-portrait,
+    .top-rating-card:active .img-portrait {
+        opacity: 1 !important;
+        transition: none !important;
+    }
+
+    .top-rating-card:active .rank-number,
+    .top-rating-card:hover .rank-number {
+        -webkit-text-stroke: 2px #2F61D5 !important;
+        transition: all 0.2s ease !important;
+    }
+
+    .top-rating-card:hover .img-landscape,
+    .top-rating-card:hover .top-rating-details {
+        display: none !important;
+    }
+
+    .portrait-poster {
+        left: 48px !important;
+        bottom: 0 !important;
+        transition: transform 0.3s ease !important;
+    }
+}

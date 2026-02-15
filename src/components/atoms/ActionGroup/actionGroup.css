@@ -1,0 +1,98 @@
+.action-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.btn-mulai {
+    background-color: #2F69FF;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.btn-modal-check, .btn-mute-toggle {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.btn-modal-check img, .btn-mute-toggle img {
+    filter: brightness(0) invert(1);
+    width: 18px;
+    height: 18px;
+}
+
+.btn-mulai:hover { 
+    background-color: #1e52d8; 
+}
+
+.btn-modal-check:hover, .btn-mute-toggle:hover { 
+    background: rgba(255, 255, 255, 0.2); 
+    border-color: white;
+}
+
+.spacer { 
+    flex-grow: 1; 
+}
+
+.tooltip-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tooltip-container::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 140%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+
+.tooltip-container::before {
+    content: "";
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s;
+    z-index: 10;
+}
+
+.tooltip-container:hover::after, .tooltip-container:hover::before {
+    opacity: 1;
+    visibility: visible;
+}

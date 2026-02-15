@@ -1,0 +1,83 @@
+.my-list-page {
+    background-color: #181A1C;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.my-list-container {
+    padding: 80px 4% 80px 4%;
+    flex: 1;
+}
+
+.my-list-header {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 32px;
+}
+
+.my-list-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px 24px;
+    width: 100%;
+}
+
+.grid-item {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.my-list-grid .movie-card-potrait:first-child:hover .potrait-image-wrapper,
+.my-list-grid .movie-card-potrait:last-child:hover .potrait-image-wrapper {
+    left: 50% !important;
+    transform: translate(-50%, -20px) !important;
+}
+
+@media (max-width: 1024px) {
+    .my-list-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .my-list-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px 12px;
+    }
+
+    .my-list-grid .movie-card-potrait {
+        width: 160px !important;
+        height: 280px !important;
+    }
+
+    .my-list-grid .potrait-image-wrapper {
+        width: 160px !important;
+        height: 240px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+
+    .my-list-grid .movie-card-potrait:active .potrait-image-wrapper,
+    .my-list-grid .movie-card-potrait:hover .potrait-image-wrapper,
+    .my-list-grid .movie-card-potrait:first-child:hover .potrait-image-wrapper,
+    .my-list-grid .movie-card-potrait:last-child:hover .potrait-image-wrapper {
+        width: 160px !important;
+        height: 240px !important;
+        transform: translateX(-50%) translateY(-15px) scale(1.05) !important;
+        left: 50% !important;
+    }
+
+    .my-list-grid .potrait-movie-title {
+        top: 250px !important;
+        font-size: 13px;
+        position: absolute;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 100% !important;
+        text-align: center;
+    }
+}

@@ -1,0 +1,143 @@
+.custom-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background-color: #181A1C;
+    border-bottom: 1px solid #333;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-desktop {
+    width: 90px;
+    height: auto;
+}
+
+.logo-mobile {
+    width: 32px;
+    height: auto;
+}
+
+.nav-links-container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-link-item {
+    text-decoration: none;
+    color: #aaa;
+    font-size: 14px;
+    white-space: nowrap;
+    transition: 0.3s ease;
+}
+
+.nav-link-item:hover,
+.nav-link-item.active {
+    color: #ffffff ;
+    font-weight: 600;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.profile-section {
+    position: relative;
+}
+
+.avatar-wrapper {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px;
+}
+
+.avatar-img {
+    height: 35px;
+    width: 71px;
+    border: 1px solid transparent;
+    transition: 0.2s;
+}
+
+.avatar-wrapper:hover .avatar-img {
+    filter: brightness(1.2);
+}
+
+.custom-dropdown-menu {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #181A1C;
+    border: 1px solid #333;
+    border-radius: 8px;
+    min-width: 170px;
+    padding: 8px 0;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+}
+
+.dropdown-item-custom {
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-item-custom:hover {
+    background-color: #222426;
+}
+
+.drop-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+    filter: brightness(0) invert(1);
+}
+
+.border-top-custom {
+    border-top: 1px solid #333;
+    margin-top: 5px;
+    padding-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .custom-navbar {
+        padding: 10px 15px;
+    }
+
+    .nav-left {
+        gap: 15px;
+    }
+
+    .nav-links-container {
+        gap: 12px;
+    }
+
+    .nav-link-item {
+        font-size: 12px;
+    }
+
+    .custom-dropdown-menu {
+        right: -5px;
+        min-width: 150px;
+    }
+}
