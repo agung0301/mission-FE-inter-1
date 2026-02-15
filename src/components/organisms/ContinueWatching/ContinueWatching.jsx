@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import './ContinueWatching.css';
+import './continueWatching.css';
 import MovieCard from '../../molecules/MovieCard/MovieCard.jsx';
 import { allContents } from '../../../data/content.js';
 
