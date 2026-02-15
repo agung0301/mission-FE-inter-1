@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import TopRatingCard from '../../molecules/TopRatingCard/TopRatingCard';
-import './TopRatingList.css';
+import './topRatingList.css';
 import { allContents } from '../../../data/content.js';
 
 const TopRatingList = ({ onOpenModal }) => {

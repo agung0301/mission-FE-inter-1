@@ -1,5 +1,5 @@
 import React from 'react';
-import './Badge.css';
+import './badge.css';
 
 const Badge = ({ text, variant = 'new' }) => {
   return (

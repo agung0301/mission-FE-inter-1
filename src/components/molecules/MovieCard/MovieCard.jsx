@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Tooltip } from 'bootstrap'; 
-import './MovieCard.css';
-import ProgresBar from '../../Atoms/ProgresBar/ProgresBar.jsx';
+import './movieCard.css';
+import ProgresBar from '../../atoms/ProgresBar/ProgresBar.jsx';
 import PlayLogo from '../../../assets/icons/play.svg';
 import CheckLogo from '../../../assets/icons/check.svg';
 import ExpandLogo from '../../../assets/icons/expand.svg';

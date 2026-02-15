@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Tooltip } from 'bootstrap';
-import './MovieCardPotrait.css';
-import Badge from '../../Atoms/Badge/Badge';
+import './movieCardPotrait.css';
+import Badge from '../../atoms/Badge/Badge';
 import PlayLogo from '../../../assets/icons/play.svg';
 import CheckLogo from '../../../assets/icons/check.svg';
 import ExpandLogo from '../../../assets/icons/expand.svg';

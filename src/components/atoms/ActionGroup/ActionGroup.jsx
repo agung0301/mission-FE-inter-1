@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './ActionGroup.css';
+import './actionGroup.css';
 import CheckLogo from '../../../assets/icons/check.svg';
 import volumeOff from '../../../assets/icons/volume-off.svg';
 import volumeOn from '../../../assets/icons/volume.svg';

@@ -1,5 +1,5 @@
 import React from 'react';
-import './EpisodeCard.css';
+import './episodeCard.css';
 import PlayLogo from '../../../assets/icons/play.svg';
 
 const EpisodeCard = ({ index, title, duration, description, thumbnail }) => {

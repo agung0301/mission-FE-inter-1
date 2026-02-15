@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import MovieCardPortrait from '../../molecules/MovieCardPotrait/MovieCardPotrait';
-import './NewReleaseList.css';
+import './newReleaseList.css';
 import { allContents } from '../../../data/content.js';
 
 const NewReleaseList = ({onOpenModal}) => {

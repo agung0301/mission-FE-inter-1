@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import MovieCardPortrait from '../../molecules/MovieCardPotrait/MovieCardPotrait.jsx';
-import './TrendingList.css';
+import './trendingList.css';
 import { allContents } from '../../../data/content.js';
 
 const TrendingList = ({ onOpenModal }) => {
