@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Tooltip } from 'bootstrap'; 
-import RankNumber from '../../atoms/RankNumber/RankNumber';
+import RankNumber from '../../Atoms/RankNumber/RankNumber';
 import './TopRatingCard.css';
 import PlayLogo from '../../../assets/icons/play.svg';
 import CheckLogo from '../../../assets/icons/check.svg';

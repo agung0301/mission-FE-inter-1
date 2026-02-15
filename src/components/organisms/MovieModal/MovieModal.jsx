@@ -1,6 +1,6 @@
 import React from 'react';
 import './MovieModal.css';
-import ActionGroup from '../../atoms/ActionGroup/ActionGroup';
+import ActionGroup from '../../Atoms/ActionGroup/ActionGroup';
 import EpisodeCard from '../../molecules/EpisodeCard/EpisodeCard';
 import MovieDetailInfo from '../../molecules/MovieDetailInfo/MovieDetailInfo';
 import StarLogo from '../../../assets/icons/star.svg';

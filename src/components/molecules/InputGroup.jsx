@@ -1,4 +1,4 @@
-import Input from "../atoms/Input";
+import Input from "../Atoms/Input";
 
 const InputGroup = ({ label, type, placeholder, id, onChange }) => {
   return (

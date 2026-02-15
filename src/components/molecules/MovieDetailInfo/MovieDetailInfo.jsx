@@ -1,5 +1,5 @@
 import React from 'react';
-import Badge from '../../atoms/Badge/Badge.jsx';
+import Badge from '../../Atoms/Badge/Badge.jsx';
 import './MovieDetailInfo.css';
 
 const MovieDetailInfo = ({ rating, episodeCount, description, cast, genres, director, duration, ageRating }) => {
