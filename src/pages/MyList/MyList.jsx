@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import MovieCardPortrait from '../../components/molecules/MovieCardPotrait/MovieCardPotrait';
-import MovieModal from '../../components/organisms/MovieModal/MovieModal'; 
+import MovieModal from '../../components/organisms/MovieModal/MovieModal';
 import './MyList.css';
 import Footer from '../../components/organisms/Footer/Footer';
 import Navbar from '../../components/molecules/Navbar/Navbar';
@@ -22,7 +22,7 @@ const MyList = () => {
         document.body.style.overflow = 'auto';
     };
 
-    const myListIds = [9, 12, 1, 7, 14, 4, 11, 24, 20, 27, 5, 32];
+    const myListIds = [26, 12, 1, 7, 14, 28, 11, 24, 20, 27, 5, 32];
 
     const myListData = myListIds.map((id) => {
         const movie = allContents.find(m => m.id === id);
@@ -42,9 +42,10 @@ const MyList = () => {
                 <div className="my-list-grid">
                     {myListData.map((item) => (
                         <div key={item.id} className="grid-item">
-                            <MovieCardPortrait 
-                                item={item} 
-                                onOpenModal={handleOpenModal} 
+                            <MovieCardPortrait
+                                item={item}
+                                onOpenModal={handleOpenModal}
+                                isMyListPage={true}
                             />
                         </div>
                     ))}
@@ -52,9 +53,11 @@ const MyList = () => {
             </div>
 
             {isModalOpen && (
-                <MovieModal 
-                    item={selectedMovie} 
-                    onClose={handleCloseModal} 
+                <MovieModal
+                    item={selectedMovie}
+                    onClose={handleCloseModal}
+                    isMyListPage={true}
+                    recommendations={allContents}
                 />
             )}
 

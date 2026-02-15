@@ -6,8 +6,8 @@ import PlayLogo from '../../../assets/icons/play.svg';
 import CheckLogo from '../../../assets/icons/check.svg';
 import ExpandLogo from '../../../assets/icons/expand.svg';
 
-const MovieCardPortrait = ({ item, onOpenModal }) => {
-  const { image, imageLandscape, title, ageRating, duration, genres, isNew, isTop5 } = item;
+const MovieCardPortrait = ({ item, onOpenModal, isMyListPage }) => {
+  const { image, imageLandscape, title, ageRating, duration, genres } = item;
   const cardRef = useRef(null);
 
   useEffect(() => {
@@ -23,25 +23,13 @@ const MovieCardPortrait = ({ item, onOpenModal }) => {
     return () => {
       tooltipList.forEach(t => t.dispose());
     };
-  }, [item]);
+  }, [item, isMyListPage]);
 
   return (
     <div ref={cardRef} className="movie-card-potrait" onClick={() => onOpenModal(item)} style={{ cursor: 'pointer' }}>
       <div className="potrait-image-wrapper">
         <img src={image} alt={title} className="potrait-img" />
         <img src={imageLandscape} alt={title} className="landscape-img" />
-
-        {isNew && (
-          <div style={{ position: 'absolute', top: '10px', left: '10px', zIndex: 5 }}>
-            <Badge text="Episode Baru" variant="new" />
-          </div>
-        )}
-
-        {isTop5 && (
-          <div style={{ position: 'absolute', top: '0', right: '0', zIndex: 5 }}>
-            <Badge text="Top 5" variant="top5" />
-          </div>
-        )}
 
         <div className="trending-details">
           <div className="action-buttons">
@@ -58,9 +46,14 @@ const MovieCardPortrait = ({ item, onOpenModal }) => {
                 className="check-btn"
                 onClick={(e) => e.stopPropagation()}
                 data-bs-toggle="tooltip"
-                title="Tambah ke Daftar"
+                key={isMyListPage ? "hapus" : "tambah"}
+                title={isMyListPage ? "Hapus dari Daftar" : "Tambah ke Daftar"}
               >
-                <img src={CheckLogo} alt="Check" />
+                {isMyListPage ? (
+                  <span style={{ color: 'white', fontSize: '18px', fontWeight: 'bold', display: 'block', lineHeight: '1' }}>✕</span>
+                ) : (
+                  <img src={CheckLogo} alt="Check" />
+                )}
               </button>
             </div>
 

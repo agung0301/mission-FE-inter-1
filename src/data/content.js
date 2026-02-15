@@ -14,11 +14,11 @@ export const allContents = [
         description: "Yoon Hae-joon dan Baek Yoon-young terjebak di tahun 1987. Hae-joon mencoba memecahkan kasus pembunuhan berantai, sementara Yoon-young mencoba mencegah pernikahan orang tuanya.",
         recommendationIds: [28, 11, 17],
         episodes: [
-            { title: "Eps 1 : The Time Machine", duration: "61m", thumbnail: "/episodes/my-perfect-stranger/ep-1.png", description: "Hae-joon menemukan mobil penjelajah waktu dan secara tidak sengaja membawa Yoon-young ke tahun 1987." },
-            { title: "Eps 2 : The Unusual Encounter", duration: "62m", thumbnail: "/episodes/my-perfect-stranger/ep-2.png", description: "Yoon-young terkejut bertemu ibunya versi SMA dan menyadari dia punya kesempatan mengubah masa lalu." },
-            { title: "Eps 3 : Unchanging Truth", duration: "60m", thumbnail: "/episodes/my-perfect-stranger/ep-3.png", description: "Hae-joon mulai menyamar sebagai guru bahasa di sekolah setempat untuk memantau tersangka pembunuhan." },
-            { title: "Eps 4 : Suspicion", duration: "60m", thumbnail: "/episodes/my-perfect-stranger/ep-4.png", description: "Hae-joon dan Yoon-young mulai bekerja sama setelah menyadari tujuan mereka di tahun 1987 berkaitan." },
-            { title: "Eps 5 : The First Victim", duration: "60m", thumbnail: "/episodes/my-perfect-stranger/ep-5.png", description: "Ketegangan meningkat saat tanggal pembunuhan pertama yang tercatat dalam catatan Hae-joon semakin dekat." }
+            { title: "Eps 1 : The Time Machine", duration: "61m", thumbnail: "/posters/landscape/thumbnail/my-perfect-stranger/eps1.png", description: "Hae-joon menemukan mobil penjelajah waktu dan secara tidak sengaja membawa Yoon-young ke tahun 1987." },
+            { title: "Eps 2 : The Unusual Encounter", duration: "62m", thumbnail: "/posters/landscape/thumbnail/my-perfect-stranger/eps2.png", description: "Yoon-young terkejut bertemu ibunya versi SMA dan menyadari dia punya kesempatan mengubah masa lalu." },
+            { title: "Eps 3 : Unchanging Truth", duration: "60m", thumbnail: "/posters/landscape/thumbnail/my-perfect-stranger/eps3.png", description: "Hae-joon mulai menyamar sebagai guru bahasa di sekolah setempat untuk memantau tersangka pembunuhan." },
+            { title: "Eps 4 : Suspicion", duration: "60m", thumbnail: "/posters/landscape/thumbnail/my-perfect-stranger/eps4.png", description: "Hae-joon dan Yoon-young mulai bekerja sama setelah menyadari tujuan mereka di tahun 1987 berkaitan." },
+            { title: "Eps 5 : The First Victim", duration: "60m", thumbnail: "/posters/landscape/thumbnail/my-perfect-stranger/eps5.png", description: "Ketegangan meningkat saat tanggal pembunuhan pertama yang tercatat dalam catatan Hae-joon semakin dekat." }
         ]
     },
     {
@@ -81,11 +81,11 @@ export const allContents = [
         description: "Setelah kekalahan Jepang di Piala Dunia 2018, Jinpachi Ego membuat fasilitas Blue Lock untuk menciptakan striker paling egois dan terbaik di dunia.",
         recommendationIds: [18, 11, 9],
         episodes: [
-            { title: "Eps 1 : Dream", duration: "24m", thumbnail: "/posters/landscape/thumbnail/eps1-id5.png", description: "Yoichi Isagi gagal membawa timnya ke nasional. Ia menerima undangan misterius ke proyek Blue Lock." },
-            { title: "Eps 2 : Monster", duration: "24m", thumbnail: "/posters/landscape/thumbnail/eps1-id5.png", description: "Isagi harus menghadapi ujian eliminasi pertama dalam ruangan tertutup dengan bola sepak sebagai senjata." },
-            { title: "Eps 3 : The Soccer's '0'", duration: "24m", thumbnail: "/episodes/blue-lock/ep-3.png", description: "Tim Z memulai pertandingan pertama mereka. Mereka belajar bahwa sepak bola di Blue Lock dimulai dari nol." },
-            { title: "Eps 4 : Premonition and Intuition", duration: "24m", thumbnail: "/episodes/blue-lock/ep-4.png", description: "Isagi mulai memahami 'senjata' miliknya sendiri saat timnya terdesak oleh strategi lawan." },
-            { title: "Eps 5 : To be Reborn", duration: "24m", thumbnail: "/episodes/blue-lock/ep-5.png", description: "Pertandingan melawan Tim Y memaksa Isagi untuk berpikir lebih egois demi meraih kemenangan pertama." }
+            { title: "Eps 1 : Dream", duration: "24m", thumbnail: "/posters/landscape/thumbnail/blue-lock/eps1.png", description: "Yoichi Isagi gagal membawa timnya ke nasional. Ia menerima undangan misterius ke proyek Blue Lock." },
+            { title: "Eps 2 : Monster", duration: "24m", thumbnail: "/posters/landscape/thumbnail/blue-lock/eps2.png", description: "Isagi harus menghadapi ujian eliminasi pertama dalam ruangan tertutup dengan bola sepak sebagai senjata." },
+            { title: "Eps 3 : The Soccer's '0'", duration: "24m", thumbnail: "/posters/landscape/thumbnail/blue-lock/eps3.png", description: "Tim Z memulai pertandingan pertama mereka. Mereka belajar bahwa sepak bola di Blue Lock dimulai dari nol." },
+            { title: "Eps 4 : Premonition and Intuition", duration: "24m", thumbnail: "/posters/landscape/thumbnail/blue-lock/eps4.png", description: "Isagi mulai memahami 'senjata' miliknya sendiri saat timnya terdesak oleh strategi lawan." },
+            { title: "Eps 5 : To be Reborn", duration: "24m", thumbnail: "/posters/landscape/thumbnail/blue-lock/eps5.png", description: "Pertandingan melawan Tim Y memaksa Isagi untuk berpikir lebih egois demi meraih kemenangan pertama." }
         ]
     },
     {
@@ -148,11 +148,11 @@ export const allContents = [
         description: "Wabah virus zombie pecah di SMA Hyosan. Tanpa bantuan dari luar, para siswa harus menggunakan peralatan sekolah untuk bertahan hidup.",
         recommendationIds: [28, 11, 17],
         episodes: [
-            { title: "Eps 1 : Episode 1", duration: "67m", thumbnail: "/episodes/all-of-us-are-dead/ep-1.png", description: "Seorang siswa digigit oleh subjek tes laboratorium, memicu rantai infeksi yang cepat di seluruh sekolah." },
-            { title: "Eps 2 : Episode 2", duration: "70m", thumbnail: "/episodes/all-of-us-are-dead/ep-2.png", description: "Kantin sekolah menjadi medan pembantaian. Cheong-san dan On-jo berusaha melarikan diri ke ruang kelas." },
-            { title: "Eps 3 : Episode 3", duration: "62m", thumbnail: "/episodes/all-of-us-are-dead/ep-3.png", description: "Siswa yang tersisa terjebak di ruang siaran sementara zombie mulai menguasai lorong-lorong utama." },
-            { title: "Eps 4 : Episode 4", duration: "71m", thumbnail: "/episodes/all-of-us-are-dead/ep-4.png", description: "Upaya penyelamatan dari luar gagal karena skala infeksi di kota Hyosan meluas tak terkendali." },
-            { title: "Eps 5 : Episode 5", duration: "64m", thumbnail: "/episodes/all-of-us-are-dead/ep-5.png", description: "Para siswa harus merancang strategi nekat untuk mencapai atap gedung demi mendapatkan sinyal." }
+            { title: "Eps 1 : Episode 1", duration: "67m", thumbnail: "/posters/landscape/thumbnail/all-of-us-are-dead/eps1.png", description: "Seorang siswa digigit oleh subjek tes laboratorium, memicu rantai infeksi yang cepat di seluruh sekolah." },
+            { title: "Eps 2 : Episode 2", duration: "70m", thumbnail: "/posters/landscape/thumbnail/all-of-us-are-dead/eps2.png", description: "Kantin sekolah menjadi medan pembantaian. Cheong-san dan On-jo berusaha melarikan diri ke ruang kelas." },
+            { title: "Eps 3 : Episode 3", duration: "62m", thumbnail: "/posters/landscape/thumbnail/all-of-us-are-dead/eps3.png", description: "Siswa yang tersisa terjebak di ruang siaran sementara zombie mulai menguasai lorong-lorong utama." },
+            { title: "Eps 4 : Episode 4", duration: "71m", thumbnail: "/posters/landscape/thumbnail/all-of-us-are-dead/eps4.png", description: "Upaya penyelamatan dari luar gagal karena skala infeksi di kota Hyosan meluas tak terkendali." },
+            { title: "Eps 5 : Episode 5", duration: "64m", thumbnail: "/posters/landscape/thumbnail/all-of-us-are-dead/eps5.png", description: "Para siswa harus merancang strategi nekat untuk mencapai atap gedung demi mendapatkan sinyal." }
         ]
     },
     {
@@ -185,11 +185,11 @@ export const allContents = [
         description: "Arisu dan teman-temannya mendapati diri mereka berada di Tokyo yang kosong, di mana mereka harus memenangkan permainan maut untuk bertahan hidup.",
         recommendationIds: [9, 17, 28],
         episodes: [
-            { title: "Eps 1 : Three of Clubs", duration: "48m", thumbnail: "/episodes/alice-in-borderland/ep-1.png", description: "Arisu, Karube, dan Chota memasuki gedung apartemen untuk permainan 'Hidup atau Mati'." },
-            { title: "Eps 2 : Five of Spades", duration: "49m", thumbnail: "/episodes/alice-in-borderland/ep-2.png", description: "Sebuah permainan fisik bertema 'Tag' dimulai di gedung apartemen yang dijaga oleh pembunuh bersenjata." },
-            { title: "Eps 3 : Seven of Hearts", duration: "51m", thumbnail: "/episodes/alice-in-borderland/ep-3.png", description: "Permainan pengkhianatan di kebun botani yang memaksa kelompok Arisu memilih siapa yang boleh hidup." },
-            { title: "Eps 4 : Distance", duration: "45m", thumbnail: "/episodes/alice-in-borderland/ep-4.png", description: "Arisu yang putus asa bertemu Usagi. Mereka berdua mengikuti permainan ketahanan di dalam terowongan bus." },
-            { title: "Eps 5 : Four of Diamonds", duration: "52m", thumbnail: "/episodes/alice-in-borderland/ep-5.png", description: "Arisu harus menggunakan kecerdasan logikanya dalam permainan teka-teki air yang mematikan." }
+            { title: "Eps 1 : Three of Clubs", duration: "48m", thumbnail: "/posters/landscape/thumbnail/alice-in-borderland/eps1.png", description: "Arisu, Karube, dan Chota memasuki gedung apartemen untuk permainan 'Hidup atau Mati'." },
+            { title: "Eps 2 : Five of Spades", duration: "49m", thumbnail: "/posters/landscape/thumbnail/alice-in-borderland/eps2.png", description: "Sebuah permainan fisik bertema 'Tag' dimulai di gedung apartemen yang dijaga oleh pembunuh bersenjata." },
+            { title: "Eps 3 : Seven of Hearts", duration: "51m", thumbnail: "/posters/landscape/thumbnail/alice-in-borderland/eps3.png", description: "Permainan pengkhianatan di kebun botani yang memaksa kelompok Arisu memilih siapa yang boleh hidup." },
+            { title: "Eps 4 : Distance", duration: "45m", thumbnail: "/posters/landscape/thumbnail/alice-in-borderland/eps4.png", description: "Arisu yang putus asa bertemu Usagi. Mereka berdua mengikuti permainan ketahanan di dalam terowongan bus." },
+            { title: "Eps 5 : Four of Diamonds", duration: "52m", thumbnail: "/posters/landscape/thumbnail/alice-in-borderland/eps5.png", description: "Arisu harus menggunakan kecerdasan logikanya dalam permainan teka-teki air yang mematikan." }
         ]
     },
     {
@@ -282,11 +282,11 @@ export const allContents = [
         description: "Siswa SMA kelas 3-2 dikirim ke garis depan untuk melawan makhluk asing mematikan demi mendapatkan poin tambahan.",
         recommendationIds: [9, 11, 28],
         episodes: [
-            { title: "Eps 1 : The Spheres", duration: "72m", thumbnail: "/episodes/duty-after-school/ep-1.png", description: "Bola misterius di langit mulai jatuh ke bumi. Pemerintah mewajibkan siswa mengikuti wajib militer." },
-            { title: "Eps 2 : Training", duration: "74m", thumbnail: "/episodes/duty-after-school/ep-2.png", description: "Para siswa kesulitan beradaptasi dengan pelatihan militer yang keras di bawah pimpinan Letnan Lee." },
-            { title: "Eps 3 : First Mission", duration: "69m", thumbnail: "/episodes/duty-after-school/ep-3.png", description: "Makhluk dari dalam bola mulai menyerang. Kelas 3-2 mengalami pertemuan mematikan pertama mereka." },
-            { title: "Eps 4 : Withdrawal", duration: "73m", thumbnail: "/episodes/duty-after-school/ep-4.png", description: "Kekacauan pecah saat evakuasi massal. Para siswa harus saling menjaga untuk bertahan hidup." },
-            { title: "Eps 5 : The Real War", duration: "71m", thumbnail: "/episodes/duty-after-school/ep-5.png", description: "Sadar bahwa dunia sudah berubah, para siswa mulai mengangkat senjata dengan serius melawan alien." }
+            { title: "Eps 1 : The Spheres", duration: "72m", thumbnail: "/posters/landscape/thumbnail/duty-after-school/eps1.png", description: "Bola misterius di langit mulai jatuh ke bumi. Pemerintah mewajibkan siswa mengikuti wajib militer." },
+            { title: "Eps 2 : Training", duration: "74m", thumbnail: "/posters/landscape/thumbnail/duty-after-school/eps2.png", description: "Para siswa kesulitan beradaptasi dengan pelatihan militer yang keras di bawah pimpinan Letnan Lee." },
+            { title: "Eps 3 : First Mission", duration: "69m", thumbnail: "/posters/landscape/thumbnail/duty-after-school/eps3.png", description: "Makhluk dari dalam bola mulai menyerang. Kelas 3-2 mengalami pertemuan mematikan pertama mereka." },
+            { title: "Eps 4 : Withdrawal", duration: "73m", thumbnail: "/posters/landscape/thumbnail/duty-after-school/eps4.png", description: "Kekacauan pecah saat evakuasi massal. Para siswa harus saling menjaga untuk bertahan hidup." },
+            { title: "Eps 5 : The Real War", duration: "71m", thumbnail: "/posters/landscape/thumbnail/duty-after-school/eps5.png", description: "Sadar bahwa dunia sudah berubah, para siswa mulai mengangkat senjata dengan serius melawan alien." }
         ]
     },
     {
@@ -304,11 +304,11 @@ export const allContents = [
         description: "Di dunia di mana 80% populasi memiliki Quirk, Izuku Midoriya lahir tanpa kekuatan namun mewarisi kekuatan All Might.",
         recommendationIds: [5, 26, 31],
         episodes: [
-            { title: "Eps 1 : Izuku Midoriya: Origin", duration: "24m", thumbnail: "/episodes/mha/ep-1.png", description: "Izuku bertemu All Might setelah mencoba menyelamatkan Bakugo dari monster lumpur." },
-            { title: "Eps 2 : What It Takes to Be a Hero", duration: "24m", thumbnail: "/episodes/mha/ep-2.png", description: "All Might mengungkapkan rahasianya dan mulai melatih Izuku untuk mewarisi One For All." },
-            { title: "Eps 3 : Roaring Muscles", duration: "24m", thumbnail: "/episodes/mha/ep-3.png", description: "Izuku menjalani 10 bulan pelatihan fisik ekstrem di Pantai Dagobah." },
-            { title: "Eps 4 : Start Line", duration: "24m", thumbnail: "/episodes/mha/ep-4.png", description: "Ujian masuk UA dimulai. Izuku menggunakan kekuatannya untuk pertama kali demi menolong Ochaco." },
-            { title: "Eps 5 : What I Can Do For Now", duration: "24m", thumbnail: "/episodes/mha/ep-5.png", description: "Hari pertama di UA. Guru Aizawa mengancam mengeluarkan siapa pun yang gagal dalam tes fisik." }
+            { title: "Eps 1 : Izuku Midoriya: Origin", duration: "24m", thumbnail: "/posters/landscape/thumbnail/my-hero-academia/eps1.png", description: "Izuku bertemu All Might setelah mencoba menyelamatkan Bakugo dari monster lumpur." },
+            { title: "Eps 2 : What It Takes to Be a Hero", duration: "24m", thumbnail: "/posters/landscape/thumbnail/my-hero-academia/eps2.png", description: "All Might mengungkapkan rahasianya dan mulai melatih Izuku untuk mewarisi One For All." },
+            { title: "Eps 3 : Roaring Muscles", duration: "24m", thumbnail: "/posters/landscape/thumbnail/my-hero-academia/eps3.png", description: "Izuku menjalani 10 bulan pelatihan fisik ekstrem di Pantai Dagobah." },
+            { title: "Eps 4 : Start Line", duration: "24m", thumbnail: "/posters/landscape/thumbnail/my-hero-academia/eps4.png", description: "Ujian masuk UA dimulai. Izuku menggunakan kekuatannya untuk pertama kali demi menolong Ochaco." },
+            { title: "Eps 5 : What I Can Do For Now", duration: "24m", thumbnail: "/posters/landscape/thumbnail/my-hero-academia/eps5.png", description: "Hari pertama di UA. Guru Aizawa mengancam mengeluarkan siapa pun yang gagal dalam tes fisik." }
         ]
     },
     {
@@ -386,11 +386,11 @@ export const allContents = [
         description: "Seorang pelatih American football dari Kansas direkrut untuk melatih tim sepak bola AFC Richmond di Liga Inggris.",
         recommendationIds: [10, 26, 5],
         episodes: [
-            { title: "Eps 1 : Pilot", duration: "31m", thumbnail: "/episodes/ted-lasso/ep-1.png", description: "Ted tiba di Richmond dan langsung menghadapi kebencian dari fans serta jurnalis lokal." },
-            { title: "Eps 2 : Biscuits", duration: "30m", thumbnail: "/episodes/ted-lasso/ep-2.png", description: "Ted mencoba menjalin hubungan baik dengan Rebecca melalui ritual biskuit setiap pagi." },
-            { title: "Eps 3 : Trent Crimm: Independent", duration: "30m", thumbnail: "/episodes/ted-lasso/ep-3.png", description: "Seorang jurnalis sinis menghabiskan waktu bersama Ted untuk menulis profil tentang dirinya." },
-            { title: "Eps 4 : For the Children", duration: "33m", thumbnail: "/episodes/ted-lasso/ep-4.png", description: "Galeri amal tahunan Richmond menjadi panggung drama antara Rebecca dan mantan suaminya." },
-            { title: "Eps 5 : Tan Lines", duration: "31m", thumbnail: "/episodes/ted-lasso/ep-5.png", description: "Keluarga Ted berkunjung dari Amerika, memaksa Ted menghadapi kenyataan sulit dalam pernikahannya." }
+            { title: "Eps 1 : Pilot", duration: "31m", thumbnail: "/posters/landscape/thumbnail/ted-lasso/eps1.png", description: "Ted tiba di Richmond dan langsung menghadapi kebencian dari fans serta jurnalis lokal." },
+            { title: "Eps 2 : Biscuits", duration: "30m", thumbnail: "/posters/landscape/thumbnail/ted-lasso/eps2.png", description: "Ted mencoba menjalin hubungan baik dengan Rebecca melalui ritual biskuit setiap pagi." },
+            { title: "Eps 3 : Trent Crimm: Independent", duration: "30m", thumbnail: "/posters/landscape/thumbnail/ted-lasso/eps3.png", description: "Seorang jurnalis sinis menghabiskan waktu bersama Ted untuk menulis profil tentang dirinya." },
+            { title: "Eps 4 : For the Children", duration: "33m", thumbnail: "/posters/landscape/thumbnail/ted-lasso/eps4.png", description: "Galeri amal tahunan Richmond menjadi panggung drama antara Rebecca dan mantan suaminya." },
+            { title: "Eps 5 : Tan Lines", duration: "31m", thumbnail: "/posters/landscape/thumbnail/ted-lasso/eps5.png", description: "Keluarga Ted berkunjung dari Amerika, memaksa Ted menghadapi kenyataan sulit dalam pernikahannya." }
         ]
     },
     {
@@ -438,11 +438,11 @@ export const allContents = [
         description: "Baymax, robot pendamping kesehatan, membantu berbagai warga di kota San Fransokyo.",
         recommendationIds: [12, 18, 23],
         episodes: [
-            { title: "Eps 1 : Kiko", duration: "11m", thumbnail: "/episodes/baymax/ep-1.png", description: "Baymax membantu seorang wanita lansia yang memiliki ketakutan terhadap kolam renang." },
-            { title: "Eps 2 : Cass", duration: "10m", thumbnail: "/episodes/baymax/ep-2.png", description: "Bibi Cass mengalami cedera pergelangan kaki dan harus belajar melepaskan kendali kafe." },
-            { title: "Eps 3 : Sofia", duration: "11m", thumbnail: "/episodes/baymax/ep-3.png", description: "Seorang siswi SMP mendapatkan bantuan emosional dari Baymax saat masa pubertas pertamanya." },
-            { title: "Eps 4 : Mbita", duration: "12m", thumbnail: "/episodes/baymax/ep-4.png", description: "Baymax membantu seorang pedagang makanan jalanan menghadapi perubahan hidup dan cinta." },
-            { title: "Eps 5 : Yachi", duration: "10m", thumbnail: "/episodes/baymax/ep-5.png", description: "Seekor kucing liar San Fransokyo terjebak dengan benda asing dan harus dirawat oleh Baymax." }
+            { title: "Eps 1 : Kiko", duration: "11m", thumbnail: "/posters/landscape/thumbnail/baymax/eps1.png", description: "Baymax membantu seorang wanita lansia yang memiliki ketakutan terhadap kolam renang." },
+            { title: "Eps 2 : Cass", duration: "10m", thumbnail: "/posters/landscape/thumbnail/baymax/eps2.png", description: "Bibi Cass mengalami cedera pergelangan kaki dan harus belajar melepaskan kendali kafe." },
+            { title: "Eps 3 : Sofia", duration: "11m", thumbnail: "/posters/landscape/thumbnail/baymax/eps3.png", description: "Seorang siswi SMP mendapatkan bantuan emosional dari Baymax saat masa pubertas pertamanya." },
+            { title: "Eps 4 : Mbita", duration: "12m", thumbnail: "/posters/landscape/thumbnail/baymax/eps4.png", description: "Baymax membantu seorang pedagang makanan jalanan menghadapi perubahan hidup dan cinta." },
+            { title: "Eps 5 : Yachi", duration: "10m", thumbnail: "/posters/landscape/thumbnail/baymax/eps5.png", description: "Seekor kucing liar San Fransokyo terjebak dengan benda asing dan harus dirawat oleh Baymax." }
         ]
     },
     {
@@ -475,11 +475,11 @@ export const allContents = [
         description: "Wabah penyakit menular baru yang membuat penderitanya haus darah muncul segera setelah pandemi COVID-19.",
         recommendationIds: [9, 11, 17],
         episodes: [
-            { title: "Eps 1 : Episode 1", duration: "64m", thumbnail: "/episodes/happiness/ep-1.png", description: "Sae-bom dan Yi-hyun menangani kasus aneh di sekolah kepolisian yang melibatkan haus darah ekstrem." },
-            { title: "Eps 2 : Episode 2", duration: "66m", thumbnail: "/episodes/happiness/ep-2.png", description: "Investigasi membawa mereka ke sebuah perusahaan farmasi yang memproduksi obat terlarang 'Next'." },
-            { title: "Eps 3 : Episode 3", duration: "65m", thumbnail: "/episodes/happiness/ep-3.png", description: "Sae-bom pindah ke apartemen barunya, tepat saat kasus infeksi pertama terdeteksi di dalam gedung." },
-            { title: "Eps 4 : Episode 4", duration: "68m", thumbnail: "/episodes/happiness/ep-4.png", description: "Kompleks apartemen diisolasi sepenuhnya oleh militer. Ketegangan antar penghuni mulai memuncak." },
-            { title: "Eps 5 : Episode 5", duration: "67m", thumbnail: "/episodes/happiness/ep-5.png", description: "Penghuni apartemen harus bekerja sama untuk mencari sumber air di tengah ancaman infeksi." }
+            { title: "Eps 1 : Public Rental Apartment", duration: "64m", thumbnail: "/posters/landscape/thumbnail/happiness/eps1.png", description: "Sae-bom dan Yi-hyun menangani kasus aneh di sekolah kepolisian yang melibatkan haus darah ekstrem." },
+            { title: "Eps 2 : Thirsty Patients", duration: "66m", thumbnail: "/posters/landscape/thumbnail/happiness/eps2.png", description: "Investigasi membawa mereka ke sebuah perusahaan farmasi yang memproduksi obat terlarang 'Next'." },
+            { title: "Eps 3 : Locked In", duration: "65m", thumbnail: "/posters/landscape/thumbnail/happiness/eps3.png", description: "Sae-bom pindah ke apartemen barunya, tepat saat kasus infeksi pertama terdeteksi di dalam gedung." },
+            { title: "Eps 4 : The Spread", duration: "68m", thumbnail: "/posters/landscape/thumbnail/happiness/eps4.png", description: "Kompleks apartemen diisolasi sepenuhnya oleh militer. Ketegangan antar penghuni mulai memuncak." },
+            { title: "Eps 5 : The Outsiders", duration: "67m", thumbnail: "/posters/landscape/thumbnail/happiness/eps5.png", description: "Penghuni apartemen harus bekerja sama untuk mencari sumber air di tengah ancaman infeksi." }
         ]
     },
     {
