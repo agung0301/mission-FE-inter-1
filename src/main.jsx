@@ -12,10 +12,6 @@ import MyList from './pages/MyList/MyList'
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/login",
     element: <Login />,
   },
   {
@@ -26,6 +22,10 @@ const router = createBrowserRouter([
     path: "/my-list",
     element: <MyList />,
   },
+  {
+    path: "/Home",
+    element: <Home />,
+  }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(

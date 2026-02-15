@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import MovieCardPortrait from '../../components/molecules/MovieCardPotrait/MovieCardPotrait';
 import MovieModal from '../../components/organisms/MovieModal/MovieModal';
-import './MyList.css';
+import './Mylist.css';
 import Footer from '../../components/organisms/Footer/Footer';
 import Navbar from '../../components/molecules/Navbar/Navbar';
 import { allContents } from '../../data/content.js';
