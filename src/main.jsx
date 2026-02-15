@@ -9,9 +9,13 @@ import Register from './pages/Register'
 import Home from './pages/Home'
 import MyList from './pages/MyList/MyList'
 
-const router = createBrowserRouter([
+  const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/",      
+    element: <Home />, 
+  },
+  {
+    path: "/login",    
     element: <Login />,
   },
   {
@@ -22,10 +26,6 @@ const router = createBrowserRouter([
     path: "/my-list",
     element: <MyList />,
   },
-  {
-    path: "/Home",
-    element: <Home />,
-  }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
