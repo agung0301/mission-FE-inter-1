@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink, Link, useNavigate } from 'react-router-dom';
 import './navbar.css';
-import logoFull from '../../../assets/images/Logo.png'; 
+import logoFull from '../../../assets/images/logo.png'; 
 import logoIcon from '../../../assets/icons/movie-open.svg'; 
 import avatar from '../../../assets/icons/avatar.png';
 import userIcon from '../../../assets/icons/user.svg';
