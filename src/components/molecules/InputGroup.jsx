@@ -1,4 +1,4 @@
-import Input from "../atoms/Input,jsx";
+import Input from "../atoms/Input.jsx";
 
 const InputGroup = ({ label, type, placeholder, id, onChange }) => {
   return (
