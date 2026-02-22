@@ -5,7 +5,7 @@ import EpisodeCard from '../../molecules/EpisodeCard/EpisodeCard';
 import MovieDetailInfo from '../../molecules/MovieDetailInfo/MovieDetailInfo';
 import StarLogo from '../../../assets/icons/star.svg';
 
-const MovieModal = ({ item, onClose, recommendations = [], isMyListPage }) => {
+const MovieModal = ({ item, onClose, recommendations = [], isMyListPage, onAdd,onRemove }) => {
     if (!item) return null;
 
     const movie = item;
@@ -23,7 +23,12 @@ const MovieModal = ({ item, onClose, recommendations = [], isMyListPage }) => {
                     <img src={movie.landscapeImg} alt={movie.title} className="modal-banner" />
                     <div className="modal-header-overlay">
                         <h2 className="modal-title">{movie.title}</h2>
-                        <ActionGroup isMyListPage={isMyListPage} />
+                        <ActionGroup
+                            isMyListPage={isMyListPage}
+                            onAdd={onAdd}
+                            onRemove={onRemove}
+                            item={movie}
+                        />
                     </div>
                 </div>
 

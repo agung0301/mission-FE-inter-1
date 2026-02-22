@@ -7,7 +7,7 @@
 }
 
 .my-list-container {
-    padding: 80px 4% 80px 4%;
+    padding: 20px 4% 80px 4%;
     flex: 1;
 }
 
@@ -30,6 +30,7 @@
     display: flex;
     justify-content: center;
 }
+
 
 .my-list-grid .movie-card-potrait:first-child:hover .potrait-image-wrapper,
 .my-list-grid .movie-card-potrait:last-child:hover .potrait-image-wrapper {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Navbar from '../components/molecules/Navbar/Navbar';
 import Hero from '../components/organisms/Hero/Hero';
 import ContinueWatching from '../components/organisms/ContinueWatching/ContinueWatching.jsx';
@@ -10,7 +10,7 @@ import MovieModal from '../components/organisms/MovieModal/MovieModal.jsx';
 
 import { allContents } from '../data/content.js';
 
-const Home = () => {
+const Home = ({ onAdd }) => {
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -42,7 +42,10 @@ const Home = () => {
         <MovieModal
           item={selectedMovie}
           onClose={handleCloseModal}
-          recommendations={allContents} 
+          onAdd={onAdd}
+          onRemove={() => { }}
+          isMyListPage={false}
+          recommendations={allContents}
         />
       )}
     </div>

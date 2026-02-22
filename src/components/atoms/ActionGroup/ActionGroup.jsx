@@ -4,7 +4,7 @@ import CheckLogo from '../../../assets/icons/check.svg';
 import volumeOff from '../../../assets/icons/volume-off.svg';
 import volumeOn from '../../../assets/icons/volume.svg';
 
-const ActionGroup = ({ isMyListPage }) => {
+const ActionGroup = ({ isMyListPage, onAdd, onRemove, item }) => {
   const [isMuted, setIsMuted] = useState(true);
 
   return (
@@ -15,7 +15,10 @@ const ActionGroup = ({ isMyListPage }) => {
         className="tooltip-container"
         data-tooltip={isMyListPage ? "Hapus dari Daftar" : "Tambahkan ke Daftar"}
       >
-        <button className="btn-modal-check">
+        <button
+          className="btn-modal-check"
+          onClick={() => isMyListPage ? onRemove(item.id) : onAdd(item)}
+        >
           {isMyListPage ? (
             <span style={{ color: 'white', fontSize: '18px', fontWeight: 'bold' }}>✕</span>
           ) : (

@@ -6,7 +6,7 @@ import Footer from '../../components/organisms/Footer/Footer';
 import Navbar from '../../components/molecules/Navbar/Navbar';
 import { allContents } from '../../data/content.js';
 
-const MyList = () => {
+const MyList = ({ data, onRemove }) => {
     const [selectedMovie, setSelectedMovie] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -22,40 +22,43 @@ const MyList = () => {
         document.body.style.overflow = 'auto';
     };
 
-    const myListIds = [26, 12, 1, 7, 14, 28, 11, 24, 20, 27, 5, 32];
-
-    const myListData = myListIds.map((id) => {
-        const movie = allContents.find(m => m.id === id);
-        if (!movie) return null;
+    const myListData = (data).map((movie) => {
         return {
             ...movie,
             image: movie.posterImg,
             imageLandscape: movie.landscapeImg
         };
-    }).filter(Boolean);
-
+    });
     return (
         <div className="my-list-page">
             <Navbar />
             <div className="my-list-container">
                 <h1 className="my-list-header">Daftar Saya</h1>
-                <div className="my-list-grid">
-                    {myListData.map((item) => (
-                        <div key={item.id} className="grid-item">
-                            <MovieCardPortrait
-                                item={item}
-                                onOpenModal={handleOpenModal}
-                                isMyListPage={true}
-                            />
-                        </div>
-                    ))}
-                </div>
+
+                {myListData.length > 0 ? (
+                    <div className="my-list-grid">
+                        {myListData.map((item) => (
+                            <div key={item.id} className="grid-item">
+                                <MovieCardPortrait
+                                    item={item}
+                                    onOpenModal={handleOpenModal}
+                                    isMyListPage={true}
+                                />
+                            </div>
+                        ))}
+                    </div>
+                ) : (
+                    <div style={{ textAlign: 'center', marginTop: '50px', color: 'gray' }}>
+                        <p>Belum ada daftar film yang ditambahkan.</p>
+                    </div>
+                )}
             </div>
 
             {isModalOpen && (
                 <MovieModal
                     item={selectedMovie}
                     onClose={handleCloseModal}
+                    onRemove={onRemove}
                     isMyListPage={true}
                     recommendations={allContents}
                 />
