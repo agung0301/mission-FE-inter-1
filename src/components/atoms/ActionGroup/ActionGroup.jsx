@@ -3,8 +3,10 @@ import './actionGroup.css';
 import CheckLogo from '../../../assets/icons/check.svg';
 import volumeOff from '../../../assets/icons/volume-off.svg';
 import volumeOn from '../../../assets/icons/volume.svg';
+import fav from '../../../assets/icons/heart.svg';
+import favFill from '../../../assets/icons/heart-fill.svg';
 
-const ActionGroup = ({ isMyListPage, onAdd, onRemove, item }) => {
+const ActionGroup = ({ isMyListPage, onAdd, onRemove, item, onToggleFavorite }) => {
   const [isMuted, setIsMuted] = useState(true);
 
   return (
@@ -26,6 +28,23 @@ const ActionGroup = ({ isMyListPage, onAdd, onRemove, item }) => {
           )}
         </button>
       </div>
+      {isMyListPage && (
+        <div
+          className="tooltip-container"
+          data-tooltip={item.isFavorite ? "Favorit Saya" : "Tandai Sebagai Favorit"}
+        >
+          <button
+            className="btn-modal-fav"
+            onClick={() => onToggleFavorite(item.id)}
+          >
+            {item.isFavorite ? (
+              <img src={favFill} alt="fav-Fill-logo" />
+            ) : (
+              <img src={fav} alt="favlogo" />
+            )}
+          </button>
+        </div>
+      )}
 
       <div className="spacer" />
 

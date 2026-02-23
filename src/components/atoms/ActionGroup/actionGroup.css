@@ -17,7 +17,7 @@
     font-size: 14px;
 }
 
-.btn-modal-check, .btn-mute-toggle {
+.btn-modal-check,.btn-modal-fav, .btn-mute-toggle {
     background: rgba(255, 255, 255, 0.1);
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -32,7 +32,7 @@
     transition: 0.3s;
 }
 
-.btn-modal-check img, .btn-mute-toggle img {
+.btn-modal-check img,.btn-modal-fav img, .btn-mute-toggle img {
     filter: brightness(0) invert(1);
     width: 18px;
     height: 18px;

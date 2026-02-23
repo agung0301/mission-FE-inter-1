@@ -6,7 +6,7 @@ import Footer from '../../components/organisms/Footer/Footer';
 import Navbar from '../../components/molecules/Navbar/Navbar';
 import { allContents } from '../../data/content.js';
 
-const MyList = ({ data, onRemove }) => {
+const MyList = ({ data, onRemove, onToggleFavorite }) => {
     const [selectedMovie, setSelectedMovie] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -56,11 +56,12 @@ const MyList = ({ data, onRemove }) => {
 
             {isModalOpen && (
                 <MovieModal
-                    item={selectedMovie}
+                    item={data.find(m => m.id === selectedMovie?.id) || selectedMovie}
                     onClose={handleCloseModal}
                     onRemove={onRemove}
                     isMyListPage={true}
                     recommendations={allContents}
+                    onToggleFavorite={onToggleFavorite}
                 />
             )}
 

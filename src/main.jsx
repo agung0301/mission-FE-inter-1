@@ -11,7 +11,16 @@ import MyList from './pages/MyList/MyList'
 
 function App() {
   const [myList, setMyList] = useState([]);
+  const handleToggleFavorite = (id) => {
+    setMyList(myList.map((item) => {
+        if (item.id === id) {
+          return { ...item, isFavorite: !item.isFavorite };
+        }
+        return item;
 
+      })
+    );
+  };
   const router = createBrowserRouter([
     {
       path: "/",
@@ -34,6 +43,7 @@ function App() {
           onRemove={(id) => {
             setMyList((prev) => prev.filter(item => item.id !== id));
           }}
+          onToggleFavorite={handleToggleFavorite}
         />
       ),
     },
