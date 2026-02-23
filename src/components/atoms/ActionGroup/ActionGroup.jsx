@@ -15,7 +15,7 @@ const ActionGroup = ({ isMyListPage, onAdd, onRemove, item, onToggleFavorite }) 
 
       <div
         className="tooltip-container"
-        data-tooltip={isMyListPage ? "Hapus dari Daftar" : "Tambahkan ke Daftar"}
+        data-tooltip={isMyListPage ? "Hapus dari Daftar Saya" : "Tambah ke Daftar Saya"}
       >
         <button
           className="btn-modal-check"

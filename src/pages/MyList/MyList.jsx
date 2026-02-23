@@ -58,7 +58,10 @@ const MyList = ({ data, onRemove, onToggleFavorite }) => {
                 <MovieModal
                     item={data.find(m => m.id === selectedMovie?.id) || selectedMovie}
                     onClose={handleCloseModal}
-                    onRemove={onRemove}
+                    onRemove={(id) => {
+                        onRemove(id);         
+                        handleCloseModal();   
+                    }}
                     isMyListPage={true}
                     recommendations={allContents}
                     onToggleFavorite={onToggleFavorite}

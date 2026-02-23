@@ -42,7 +42,10 @@ const Home = ({ onAdd }) => {
         <MovieModal
           item={selectedMovie}
           onClose={handleCloseModal}
-          onAdd={onAdd}
+          onAdd={(id) => {
+            onAdd(id);
+            handleCloseModal();
+          }}
           onRemove={() => { }}
           isMyListPage={false}
           recommendations={allContents}

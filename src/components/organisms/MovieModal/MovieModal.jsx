@@ -5,7 +5,7 @@ import EpisodeCard from '../../molecules/EpisodeCard/EpisodeCard';
 import MovieDetailInfo from '../../molecules/MovieDetailInfo/MovieDetailInfo';
 import StarLogo from '../../../assets/icons/star.svg';
 
-const MovieModal = ({ item, onClose, recommendations = [], isMyListPage, onAdd,onRemove,onToggleFavorite }) => {
+const MovieModal = ({ item, onClose, recommendations = [], isMyListPage, onAdd, onRemove, onToggleFavorite }) => {
     if (!item) return null;
 
     const movie = item;
