@@ -3,7 +3,7 @@ import MovieCardPortrait from '../../molecules/MovieCardPotrait/MovieCardPotrait
 import './trendingList.css';
 import { allContents } from '../../../data/content.js';
 
-const TrendingList = ({ onOpenModal }) => {
+const TrendingList = ({ onOpenModal, onAdd }) => {
   const scrollRef = useRef(null);
 
   const scroll = (direction) => {
@@ -36,8 +36,10 @@ const TrendingList = ({ onOpenModal }) => {
           {trendingData.map((movie) => (
             <MovieCardPortrait
               key={movie.id}
+              onAdd={onAdd}
               item={movie}
               onOpenModal={onOpenModal}
+              isMyListPage={false}
             />
           ))}
         </div>

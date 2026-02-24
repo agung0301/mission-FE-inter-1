@@ -42,6 +42,7 @@ const MyList = ({ data, onRemove, onToggleFavorite }) => {
                                 <MovieCardPortrait
                                     item={item}
                                     onOpenModal={handleOpenModal}
+                                    onRemove={onRemove}
                                     isMyListPage={true}
                                 />
                             </div>

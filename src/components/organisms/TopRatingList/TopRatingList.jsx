@@ -3,7 +3,7 @@ import TopRatingCard from '../../molecules/TopRatingCard/TopRatingCard';
 import './topRatingList.css';
 import { allContents } from '../../../data/content.js';
 
-const TopRatingList = ({ onOpenModal }) => {
+const TopRatingList = ({ onOpenModal, onAdd }) => {
   const scrollRef = useRef(null);
 
   const scroll = (direction) => {
@@ -43,6 +43,8 @@ const TopRatingList = ({ onOpenModal }) => {
               ageRating={movie.ageRating}
               genres={movie.genres}
               onOpenModal={() => onOpenModal(movie)}
+              onAdd={onAdd}
+              item={movie}
             />
           ))}
         </div>

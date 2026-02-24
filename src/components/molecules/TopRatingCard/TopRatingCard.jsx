@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import { Tooltip } from 'bootstrap'; 
+import { Tooltip } from 'bootstrap';
 import RankNumber from '../../atoms/RankNumber/RankNumber';
 import './topRatingCard.css';
 import PlayLogo from '../../../assets/icons/play.svg';
 import CheckLogo from '../../../assets/icons/check.svg';
 import ExpandLogo from '../../../assets/icons/expand.svg';
 
-const TopRatingCard = ({ rank, image, duration, ageRating, genres, imageLandscape, onOpenModal }) => {
+const TopRatingCard = ({ rank, image, duration, ageRating, genres, imageLandscape, onOpenModal, onAdd, item }) => {
   useEffect(() => {
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
     const tooltipList = [...tooltipTriggerList].map(el => new Tooltip(el));
@@ -26,33 +26,37 @@ const TopRatingCard = ({ rank, image, duration, ageRating, genres, imageLandscap
         <div className="top-rating-details">
           <div className="action-buttons">
             <div className="left-btns">
-              <button 
-                className="play-btn" 
+              <button
+                className="play-btn"
                 onClick={(e) => e.stopPropagation()}
-                data-bs-toggle="tooltip" 
-                data-bs-placement="top" 
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
                 title="Putar"
               >
                 <img src={PlayLogo} alt="Play" />
               </button>
-              <button 
-                className="check-btn" 
-                onClick={(e) => e.stopPropagation()}
-                data-bs-toggle="tooltip" 
-                data-bs-placement="top" 
+              <button
+                className="check-btn"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onAdd(item);
+                }}
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
                 title="Tambah ke Daftar"
+
               >
                 <img src={CheckLogo} alt="Check" />
               </button>
             </div>
-            <button 
-              className="expand-btn" 
+            <button
+              className="expand-btn"
               onClick={(e) => {
-                e.stopPropagation(); 
+                e.stopPropagation();
                 onOpenModal();
               }}
-              data-bs-toggle="tooltip" 
-              data-bs-placement="top" 
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
               title="Detail"
             >
               <img src={ExpandLogo} alt="Expand" />

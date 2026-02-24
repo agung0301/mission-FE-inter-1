@@ -10,7 +10,7 @@ import MovieModal from '../components/organisms/MovieModal/MovieModal.jsx';
 
 import { allContents } from '../data/content.js';
 
-const Home = ({ onAdd }) => {
+const Home = ({ onRemove, onAdd, myList }) => {
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -30,11 +30,30 @@ const Home = ({ onAdd }) => {
     <div style={{ backgroundColor: '#181A1C', minHeight: '100vh' }}>
       <Navbar />
       <Hero />
-
-      <ContinueWatching onOpenModal={handleOpenModal} />
-      <TopRatingList onOpenModal={handleOpenModal} />
-      <TrendingList onOpenModal={handleOpenModal} />
-      <NewReleaseList onOpenModal={handleOpenModal} />
+      <ContinueWatching
+        onOpenModal={handleOpenModal}
+        myList={myList}
+        onAdd={onAdd}
+        onRemove={onRemove}
+      />
+      <TopRatingList
+        onOpenModal={handleOpenModal}
+        myList={myList}
+        onAdd={onAdd}
+        onRemove={onRemove}
+      />
+      <TrendingList
+        onOpenModal={handleOpenModal}
+        myList={myList}
+        onAdd={onAdd}
+        onRemove={onRemove}
+        />
+      <NewReleaseList
+        onOpenModal={handleOpenModal}
+        myList={myList}
+        onAdd={onAdd}
+        onRemove={onRemove}
+      />
 
       <Footer />
 

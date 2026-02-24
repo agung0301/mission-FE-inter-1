@@ -3,7 +3,7 @@ import './continueWatching.css';
 import MovieCard from '../../molecules/MovieCard/MovieCard.jsx';
 import { allContents } from '../../../data/content.js';
 
-const ContinueWatching = ({ onOpenModal }) => {
+const ContinueWatching = ({ onOpenModal, onAdd }) => {
   const scrollRef = useRef(null);
 
   const scroll = (direction) => {
@@ -57,6 +57,7 @@ const ContinueWatching = ({ onOpenModal }) => {
                 item={combinedData}
                 variant="landscape"
                 onOpenModal={() => onOpenModal(combinedData)}
+                onAdd={onAdd}
               />
             );
           })}

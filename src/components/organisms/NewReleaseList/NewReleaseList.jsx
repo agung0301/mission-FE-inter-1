@@ -3,7 +3,7 @@ import MovieCardPortrait from '../../molecules/MovieCardPotrait/MovieCardPotrait
 import './newReleaseList.css';
 import { allContents } from '../../../data/content.js';
 
-const NewReleaseList = ({onOpenModal}) => {
+const NewReleaseList = ({ onOpenModal, onAdd }) => {
   const scrollRef = useRef(null);
 
   const scroll = (direction) => {
@@ -34,7 +34,13 @@ const NewReleaseList = ({onOpenModal}) => {
         <button className="nav-btn left" onClick={() => scroll('left')}>‹</button>
         <div className="new-release-scroll-container" ref={scrollRef}>
           {newReleaseData.map((movie) => (
-            <MovieCardPortrait key={movie.id} item={movie} onOpenModal={onOpenModal}/>
+            <MovieCardPortrait
+              key={movie.id}
+              item={movie}
+              onOpenModal={onOpenModal}
+              onAdd={onAdd}
+              isMyListPage={false}
+            />
           ))}
         </div>
         <button className="nav-btn right" onClick={() => scroll('right')}>›</button>

@@ -6,7 +6,7 @@ import PlayLogo from '../../../assets/icons/play.svg';
 import CheckLogo from '../../../assets/icons/check.svg';
 import ExpandLogo from '../../../assets/icons/expand.svg';
 
-const MovieCardPortrait = ({ item, onOpenModal, isMyListPage }) => {
+const MovieCardPortrait = ({ item, onOpenModal, isMyListPage, onAdd, onRemove }) => {
   const { image, imageLandscape, title, ageRating, duration, genres } = item;
   const cardRef = useRef(null);
 
@@ -44,7 +44,14 @@ const MovieCardPortrait = ({ item, onOpenModal, isMyListPage }) => {
               </button>
               <button
                 className="check-btn"
-                onClick={(e) => e.stopPropagation()}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (isMyListPage) {
+                    onRemove(item.id);
+                  } else {
+                    onAdd(item);
+                  }
+                }}
                 data-bs-toggle="tooltip"
                 key={isMyListPage ? "hapus" : "tambah"}
                 title={isMyListPage ? "Hapus dari Daftar" : "Tambah ke Daftar"}
