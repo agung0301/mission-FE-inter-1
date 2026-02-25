@@ -1,12 +1,14 @@
 import React, { useEffect, useRef } from 'react';
 import { Tooltip } from 'bootstrap';
 import './movieCardPotrait.css';
-import Badge from '../../atoms/Badge/Badge';
 import PlayLogo from '../../../assets/icons/play.svg';
 import CheckLogo from '../../../assets/icons/check.svg';
 import ExpandLogo from '../../../assets/icons/expand.svg';
+import fav from '../../../assets/icons/heart.svg';
+import favFill from '../../../assets/icons/heart-fill.svg';
 
-const MovieCardPortrait = ({ item, onOpenModal, isMyListPage, onAdd, onRemove }) => {
+
+const MovieCardPortrait = ({ item, onOpenModal, isMyListPage, onAdd, onRemove, onToggleFavorite }) => {
   const { image, imageLandscape, title, ageRating, duration, genres } = item;
   const cardRef = useRef(null);
 
@@ -62,6 +64,24 @@ const MovieCardPortrait = ({ item, onOpenModal, isMyListPage, onAdd, onRemove })
                   <img src={CheckLogo} alt="Check" />
                 )}
               </button>
+              {isMyListPage && (
+                <button
+                  className="btn-modal-fav"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onToggleFavorite(item.id);
+                  }}
+                  data-bs-toggle="tooltip"
+                  key={item.isFavorite ? "fav-isi" : "fav-kosong"}
+                  title={item.isFavorite ? "Favorit Saya" : "Tandai Sebagai Favorit"}
+                >
+                  {item.isFavorite ? (
+                    <img src={favFill} alt="fav-Fill-logo" />
+                  ) : (
+                    <img src={fav} alt="favlogo" />
+                  )}
+                </button>
+              )}
             </div>
 
             <button

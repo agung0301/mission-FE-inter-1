@@ -44,6 +44,7 @@ const MyList = ({ data, onRemove, onToggleFavorite }) => {
                                     onOpenModal={handleOpenModal}
                                     onRemove={onRemove}
                                     isMyListPage={true}
+                                    onToggleFavorite={onToggleFavorite}
                                 />
                             </div>
                         ))}
