@@ -32,10 +32,9 @@ function App() {
         return { ...item, isFavorite: !item.isFavorite };
       }
       return item;
-
-    })
-    );
+    }));
   };
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -44,10 +43,12 @@ function App() {
           onAdd={(movie) => {
             setMyList((prev) => {
               if (prev.find((m) => m.id === movie.id)) {
-                Toast.fire({
-                  icon: 'info',
-                  title: `${movie.title} Sudah Tersedia Di Daftar Saya`
-                });
+                if (window.location.pathname !== '/my-list') {
+                  Toast.fire({
+                    icon: 'info',
+                    title: `${movie.title} Sudah Tersedia Di Daftar Saya`
+                  });
+                }
                 return prev;
               }
               Toast.fire({
@@ -68,7 +69,6 @@ function App() {
           onRemove={(id) => {
             const movieToDelete = myList.find((item) => item.id === id);
             setMyList((prev) => prev.filter((item) => item.id !== id));
-
             Toast.fire({
               icon: 'warning',
               title: `${movieToDelete?.title || 'Film'} Dihapus Dari Daftar Saya`
