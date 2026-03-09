@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -8,9 +8,25 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Home from './pages/Home'
 import MyList from './pages/MyList/MyList'
+import api from './services/api'
 
 function App() {
   const [myList, setMyList] = useState([]);
+  useEffect(() => {
+    const fetchMyList = async () => {
+      try {
+        const response = await api.get('/my-list');
+
+        setMyList(response.data);
+
+        console.log("Data dari server berhasil dimuat:", response.data);
+      } catch (error) {
+        console.error("Gagal mengambil data:", error);
+      }
+    };
+
+    fetchMyList();
+  }, []);
 
   const Toast = Swal.mixin({
     toast: true,
@@ -40,23 +56,36 @@ function App() {
       path: "/",
       element: (
         <Home
-          onAdd={(movie) => {
-            setMyList((prev) => {
-              if (prev.find((m) => m.id === movie.id)) {
-                if (window.location.pathname !== '/my-list') {
-                  Toast.fire({
-                    icon: 'info',
-                    title: `${movie.title} Sudah Tersedia Di Daftar Saya`
-                  });
-                }
-                return prev;
+          onAdd={async (movie) => {
+            try {
+              const isExisting = myList.find((m) => m.title === movie.title);
+              if (isExisting) {
+                Toast.fire({
+                  icon: 'info',
+                  title: `${movie.title} Sudah Tersedia Di Daftar Saya`
+                });
+                return;
               }
+
+              const response = await api.post('/my-list', {
+                ...movie,
+                isFavorite: false
+              });
+
+              setMyList((prev) => [...prev, response.data]);
+
               Toast.fire({
                 icon: 'success',
                 title: `Berhasil Menambahkan ${movie.title} Ke Daftar Saya`
               });
-              return [...prev, movie];
-            });
+
+            } catch (error) {
+              console.error('Error adding to My List:', error);
+              Toast.fire({
+                icon: 'error',
+                title: `Gagal Menambahkan ${movie.title} Ke Daftar Saya`
+              });
+            }
           }}
         />
       ),
@@ -66,13 +95,23 @@ function App() {
       element: (
         <MyList
           data={myList}
-          onRemove={(id) => {
-            const movieToDelete = myList.find((item) => item.id === id);
-            setMyList((prev) => prev.filter((item) => item.id !== id));
-            Toast.fire({
-              icon: 'warning',
-              title: `${movieToDelete?.title || 'Film'} Dihapus Dari Daftar Saya`
-            });
+          onRemove={async (movie) => {
+            try {
+
+              await api.delete(`/my-list/${movie.id}`);
+              const movieToDelete = myList.find((item) => item.id === movie.id);
+              setMyList((prev) => prev.filter((item) => item.id !== movie.id));
+              Toast.fire({
+                icon: 'warning',
+                title: `${movieToDelete?.movie.title || 'Film'} Dihapus Dari Daftar Saya`
+              });
+            } catch (error) {
+              console.error("Gagal hapus:", error);
+              Toast.fire({
+                icon: 'error',
+                title: `Gagal Menghapus ${movie.title} Dari Daftar Saya`
+              });
+            }
           }}
           onToggleFavorite={handleToggleFavorite}
         />
