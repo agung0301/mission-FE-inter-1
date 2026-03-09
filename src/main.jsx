@@ -42,13 +42,22 @@ function App() {
     }
   });
 
-  const handleToggleFavorite = (id) => {
-    setMyList(myList.map((item) => {
-      if (item.id === id) {
-        return { ...item, isFavorite: !item.isFavorite };
-      }
-      return item;
-    }));
+  const handleToggleFavorite = async (id) => {
+    const oldList = [...myList];
+
+    setMyList((prev) =>
+      prev.map((item) =>
+        item.id === id ? { ...item, isFavorite: !item.isFavorite } : item)
+    );
+    try {
+      const movieToUpdate = oldList.find((item) => item.id === id);
+      const updatedMovie = { ...movieToUpdate, isFavorite: !movieToUpdate.isFavorite };
+
+      await api.put(`/my-list/${id}`, updatedMovie);
+    } catch (error) {
+      console.error("Gagal update:", error);
+      setMyList(oldList);
+    }
   };
 
   const router = createBrowserRouter([
