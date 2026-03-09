@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -95,22 +95,20 @@ function App() {
       element: (
         <MyList
           data={myList}
-          onRemove={async (movie) => {
+          onRemove={async (id) => {
             try {
+              const movieToDelete = myList.find((item) => item.id === id);
 
-              await api.delete(`/my-list/${movie.id}`);
-              const movieToDelete = myList.find((item) => item.id === movie.id);
-              setMyList((prev) => prev.filter((item) => item.id !== movie.id));
+              await api.delete(`/my-list/${id}`);
+
+              setMyList((prev) => prev.filter((item) => item.id !== id));
+
               Toast.fire({
                 icon: 'warning',
-                title: `${movieToDelete?.movie.title || 'Film'} Dihapus Dari Daftar Saya`
+                title: `${movieToDelete?.title || 'Film'} Dihapus Dari Daftar Saya`
               });
             } catch (error) {
               console.error("Gagal hapus:", error);
-              Toast.fire({
-                icon: 'error',
-                title: `Gagal Menghapus ${movie.title} Dari Daftar Saya`
-              });
             }
           }}
           onToggleFavorite={handleToggleFavorite}
