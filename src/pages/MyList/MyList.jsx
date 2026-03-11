@@ -6,7 +6,7 @@ import Footer from '../../components/organisms/Footer/Footer';
 import Navbar from '../../components/molecules/Navbar/Navbar';
 import { allContents } from '../../data/content.js';
 
-const MyList = ({ data, onRemove, onToggleFavorite }) => {
+const MyList = ({ data, onRemove, onToggleFavorite, isLoading, isError }) => {
     const [selectedMovie, setSelectedMovie] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -29,30 +29,59 @@ const MyList = ({ data, onRemove, onToggleFavorite }) => {
             imageLandscape: movie.landscapeImg
         };
     });
+
     return (
         <div className="my-list-page">
             <Navbar />
             <div className="my-list-container">
                 <h1 className="my-list-header">Daftar Saya</h1>
 
-                {myListData.length > 0 ? (
-                    <div className="my-list-grid">
-                        {myListData.map((item) => (
-                            <div key={item.id} className="grid-item">
-                                <MovieCardPortrait
-                                    item={item}
-                                    onOpenModal={handleOpenModal}
-                                    onRemove={onRemove}
-                                    isMyListPage={true}
-                                    onToggleFavorite={onToggleFavorite}
-                                />
-                            </div>
-                        ))}
+                {isLoading ? (
+                    <div className="d-flex flex-column justify-content-center align-items-center" style={{ height: '50vh', color: 'white' }}>
+                        <div className="spinner-border text-danger" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </div>
+                        <p className="mt-3">Menyiapkan daftar tontonan Anda...</p>
+                    </div>
+                ) : isError ? (
+                    <div className="d-flex flex-column justify-content-center align-items-center text-white" style={{ height: '50vh' }}>
+                        <div className="text-danger mb-3" style={{ fontSize: '3rem' }}>
+                            <i className="bi bi-exclamation-triangle"></i>
+                        </div>
+                        <h3>Konten Tidak Tersedia!</h3>
+                        <p className="text-secondary text-center">
+                            Kami mengalami kendala saat memuat daftar film Anda. <br />
+                            Mohon pastikan koneksi internet Anda stabil dan coba beberapa saat lagi.
+                        </p>
+                        <button
+                            className="btn btn-primary mt-3 px-4"
+                            onClick={() => window.location.reload()}
+                        >
+                            Coba Lagi
+                        </button>
                     </div>
                 ) : (
-                    <div style={{ textAlign: 'center', marginTop: '50px', color: 'gray' }}>
-                        <p>Belum ada daftar film yang ditambahkan.</p>
-                    </div>
+                    <>
+                        {myListData.length > 0 ? (
+                            <div className="my-list-grid">
+                                {myListData.map((item) => (
+                                    <div key={item.id} className="grid-item">
+                                        <MovieCardPortrait
+                                            item={item}
+                                            onOpenModal={handleOpenModal}
+                                            onRemove={onRemove}
+                                            isMyListPage={true}
+                                            onToggleFavorite={onToggleFavorite}
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        ) : (
+                            <div style={{ textAlign: 'center', marginTop: '50px', color: 'gray' }}>
+                                <p>Belum ada daftar film yang ditambahkan.</p>
+                            </div>
+                        )}
+                    </>
                 )}
             </div>
 
@@ -61,8 +90,8 @@ const MyList = ({ data, onRemove, onToggleFavorite }) => {
                     item={data.find(m => m.id === selectedMovie?.id) || selectedMovie}
                     onClose={handleCloseModal}
                     onRemove={(id) => {
-                        onRemove(id);         
-                        handleCloseModal();   
+                        onRemove(id);
+                        handleCloseModal();
                     }}
                     isMyListPage={true}
                     recommendations={allContents}

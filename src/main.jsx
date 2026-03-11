@@ -12,8 +12,12 @@ import api from './services/api'
 
 function App() {
   const [myList, setMyList] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
   useEffect(() => {
     const fetchMyList = async () => {
+      setIsLoading(true);
+      setIsError(false);
       try {
         const response = await api.get('/my-list');
 
@@ -22,7 +26,11 @@ function App() {
         console.log("Data dari server berhasil dimuat:", response.data);
       } catch (error) {
         console.error("Gagal mengambil data:", error);
+        setIsError(true);
+      }finally{
+        setIsLoading(false);
       }
+      
     };
 
     fetchMyList();
@@ -104,6 +112,8 @@ function App() {
       element: (
         <MyList
           data={myList}
+          isLoading={isLoading}
+          isError={isError}
           onRemove={async (id) => {
             try {
               const movieToDelete = myList.find((item) => item.id === id);
