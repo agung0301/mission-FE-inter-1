@@ -127,6 +127,10 @@ function App() {
                 title: `${movieToDelete?.title || 'Film'} Dihapus Dari Daftar Saya`
               });
             } catch (error) {
+              Toast.fire({
+                icon: 'error',
+                title: `${movieToDelete?.title || 'Film'} Gagal Dihapus Dari Daftar Saya`
+              });
               console.error("Gagal hapus:", error);
             }
           }}
