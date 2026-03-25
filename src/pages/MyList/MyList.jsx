@@ -1,14 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import MovieCardPortrait from '../../components/molecules/MovieCardPotrait/MovieCardPotrait';
 import MovieModal from '../../components/organisms/MovieModal/MovieModal';
 import './myList.css';
 import Footer from '../../components/organisms/Footer/Footer';
 import Navbar from '../../components/molecules/Navbar/Navbar';
 import { allContents } from '../../data/content.js';
+import useMovieStore from '../../store/useMovieStore';
 
-const MyList = ({ data, onRemove, onToggleFavorite, isLoading, isError }) => {
+const MyList = () => {
+    const { myList, fetchMyList, removeMovie, toggleFavorite, isLoading, isError } = useMovieStore();
+
     const [selectedMovie, setSelectedMovie] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    useEffect(() => {
+        fetchMyList();
+    }, []);
 
     const handleOpenModal = (movie) => {
         setSelectedMovie(movie);
@@ -22,10 +29,10 @@ const MyList = ({ data, onRemove, onToggleFavorite, isLoading, isError }) => {
         document.body.style.overflow = 'auto';
     };
 
-    const myListData = (data).map((movie) => {
+    const myListData = (myList || []).map((movie) => {
         return {
             ...movie,
-            image: movie.posterImg,
+            image: movie.posterImg || movie.poster,
             imageLandscape: movie.landscapeImg
         };
     });
@@ -69,9 +76,9 @@ const MyList = ({ data, onRemove, onToggleFavorite, isLoading, isError }) => {
                                         <MovieCardPortrait
                                             item={item}
                                             onOpenModal={handleOpenModal}
-                                            onRemove={onRemove}
+                                            onRemove={removeMovie}
                                             isMyListPage={true}
-                                            onToggleFavorite={onToggleFavorite}
+                                            onToggleFavorite={toggleFavorite}
                                         />
                                     </div>
                                 ))}
@@ -87,15 +94,15 @@ const MyList = ({ data, onRemove, onToggleFavorite, isLoading, isError }) => {
 
             {isModalOpen && (
                 <MovieModal
-                    item={data.find(m => m.id === selectedMovie?.id) || selectedMovie}
+                    item={myList.find(m => m.id === selectedMovie?.id) || selectedMovie}
                     onClose={handleCloseModal}
                     onRemove={(id) => {
-                        onRemove(id);
+                        removeMovie(id);
                         handleCloseModal();
                     }}
                     isMyListPage={true}
                     recommendations={allContents}
-                    onToggleFavorite={onToggleFavorite}
+                    onToggleFavorite={toggleFavorite}
                 />
             )}
 

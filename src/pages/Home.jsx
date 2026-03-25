@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from '../components/molecules/Navbar/Navbar';
 import Hero from '../components/organisms/Hero/Hero';
 import ContinueWatching from '../components/organisms/ContinueWatching/ContinueWatching.jsx';
@@ -9,10 +9,17 @@ import Footer from '../components/organisms/Footer/Footer.jsx';
 import MovieModal from '../components/organisms/MovieModal/MovieModal.jsx';
 
 import { allContents } from '../data/content.js';
+import useMovieStore from '../store/useMovieStore';
 
-const Home = ({ onRemove, onAdd, myList }) => {
+const Home = () => { 
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const { myList, addMovie, removeMovie, fetchMyList } = useMovieStore();
+
+  useEffect(() => {
+    fetchMyList();
+  }, []);
 
   const handleOpenModal = (movie) => {
     setSelectedMovie(movie);
@@ -30,29 +37,30 @@ const Home = ({ onRemove, onAdd, myList }) => {
     <div style={{ backgroundColor: '#181A1C', minHeight: '100vh' }}>
       <Navbar />
       <Hero />
+
       <ContinueWatching
         onOpenModal={handleOpenModal}
         myList={myList}
-        onAdd={onAdd}
-        onRemove={onRemove}
+        onAdd={addMovie}
+        onRemove={removeMovie}
       />
       <TopRatingList
         onOpenModal={handleOpenModal}
         myList={myList}
-        onAdd={onAdd}
-        onRemove={onRemove}
+        onAdd={addMovie}
+        onRemove={removeMovie}
       />
       <TrendingList
         onOpenModal={handleOpenModal}
         myList={myList}
-        onAdd={onAdd}
-        onRemove={onRemove}
-        />
+        onAdd={addMovie}
+        onRemove={removeMovie}
+      />
       <NewReleaseList
         onOpenModal={handleOpenModal}
         myList={myList}
-        onAdd={onAdd}
-        onRemove={onRemove}
+        onAdd={addMovie}
+        onRemove={removeMovie}
       />
 
       <Footer />
@@ -61,11 +69,11 @@ const Home = ({ onRemove, onAdd, myList }) => {
         <MovieModal
           item={selectedMovie}
           onClose={handleCloseModal}
-          onAdd={(id) => {
-            onAdd(id);
+          onAdd={(movie) => { 
+            addMovie(movie);
             handleCloseModal();
           }}
-          onRemove={() => { }}
+          onRemove={removeMovie}
           isMyListPage={false}
           recommendations={allContents}
         />
